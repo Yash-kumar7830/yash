@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - HealHub</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  background-image: url(bg.jpg);
+}
+
+/* Registration Container */
+.register-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header Section */
+.register-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-header h1 {
+  font-size: 2rem;
+  color: #1d17c3;
+}
+
+.register-header p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Form Styles */
+.register-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="file"] {
+  border: none;
+  padding: 5px;
+}
+
+.form-group input:focus {
+  border-color: #0e100e;
+  box-shadow: 0 0 8px rgba(20, 25, 20, 0.5);
+  outline: none;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Button Styles */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #971111, #bfc518);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #ab1056, #4CAF50);
+  transform: scale(1.05);
+}
+
+/* Login Link */
+.login-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.login-link a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .register-container {
+    padding: 20px;
+  }
+
+  .register-header h1 {
+    font-size: 1.8rem;
+  }
+  
+
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-header">
+      <h1>Register at HealHub</h1>
+      <p>Create your account to access personalized healthcare services.</p>
+    </div>
+    <form action="submit-registration.html" method="POST" enctype="multipart/form-data" class="register-form">
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+      </div>
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <!-- Phone -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+      </div>
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+      </div>
+      <!-- ID Proof -->
+      <div class="form-group">
+        <label for="id-proof">Upload ID Proof</label>
+        <input type="file" id="id-proof" name="id_proof" accept=".jpg,.jpeg,.png,.pdf" required>
+        <small class="hint">Accepted formats: JPG, PNG, PDF</small>
+      </div>
+      <button type="submit" class="btn-primary">Register</button>
+      <p class="login-link">Already have an account? <a href="LoginPage.html">Login here</a></p>
+    </form>
+  </div>
+</body>
+</html>
+
